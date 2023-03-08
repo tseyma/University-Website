@@ -1,0 +1,84 @@
+﻿@model duzce_uni.Models.duyurular
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Duyuru Ekle</h2>
+
+<h4>Duyurular</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="duyuruBaslik" class="control-label"></label>
+                <input asp-for="duyuruBaslik" class="form-control" />
+                <span asp-validation-for="duyuruBaslik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruTur" class="control-label"></label>
+                <input asp-for="duyuruTur" class="form-control" />
+                <span asp-validation-for="duyuruTur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruTarih" class="control-label"></label>
+                <input asp-for="duyuruTarih" class="form-control" />
+                <span asp-validation-for="duyuruTarih" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruIcerik1" class="control-label"></label>
+                <input asp-for="duyuruIcerik1" class="form-control" />
+                <span asp-validation-for="duyuruIcerik1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruIcerik2" class="control-label"></label>
+                <input asp-for="duyuruIcerik2" class="form-control" />
+                <span asp-validation-for="duyuruIcerik2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruIcerik3" class="control-label"></label>
+                <input asp-for="duyuruIcerik3" class="form-control" />
+                <span asp-validation-for="duyuruIcerik3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruGorsel1" class="control-label"></label>
+                <input asp-for="duyuruGorsel1" class="form-control" />
+                <span asp-validation-for="duyuruGorsel1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruGorsel2" class="control-label"></label>
+                <input asp-for="duyuruGorsel2" class="form-control" />
+                <span asp-validation-for="duyuruGorsel2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruGorsel3" class="control-label"></label>
+                <input asp-for="duyuruGorsel3" class="form-control" />
+                <span asp-validation-for="duyuruGorsel3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruGorsel4" class="control-label"></label>
+                <input asp-for="duyuruGorsel4" class="form-control" />
+                <span asp-validation-for="duyuruGorsel4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duyuruGorsel5" class="control-label"></label>
+                <input asp-for="duyuruGorsel5" class="form-control" />
+                <span asp-validation-for="duyuruGorsel5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

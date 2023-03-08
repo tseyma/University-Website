@@ -1,0 +1,85 @@
+﻿@model duzce_uni.Models.duyurular
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Duyurular</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruBaslik)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruBaslik)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruTur)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruTur)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruTarih)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruTarih)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruIcerik1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruIcerik1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruIcerik2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruIcerik2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruIcerik3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruIcerik3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruGorsel1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruGorsel1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruGorsel2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruGorsel2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruGorsel3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruGorsel3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruGorsel4)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruGorsel4)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.duyuruGorsel5)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.duyuruGorsel5)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Düzenle</a> |
+    <a asp-action="Index">Geri Dön</a>
+</div>

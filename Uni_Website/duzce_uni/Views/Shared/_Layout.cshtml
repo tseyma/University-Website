@@ -1,0 +1,137 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - duzce_uni</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles-merged.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body>
+    <header>
+        <div class="probootstrap-header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-9 probootstrap-top-quick-contact-info">
+                        <span><i class="icon-location2"></i>Düzce Üniversitesi Konuralp Yerleşkesi 81620 DÜZCE - TÜRKİYE </span>
+                        <span><i class="icon-phone2"></i>0850 800 81 81</span>
+                        <span><i class="icon-mail"></i>duzce.edu.tr</span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 probootstrap-top-social">
+                        <ul>
+                            <li><a href="https://twitter.com/duzceuniversite"><i class="icon-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/DuzceUniversite"><i class="icon-facebook2"></i></a></li>
+                            <li><a href="https://www.instagram.com/duzceuniversite/"><i class="icon-instagram2"></i></a></li>
+                            <li><a href="http://www.youtube.com/duzceuniversite"><i class="icon-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-default probootstrap-navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="btn-more js-btn-more visible-xs">
+                        <a href="#"><i class="icon-dots-three-vertical "></i></a>
+                    </div>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="~/Home/Index" title="ProBootstrap:Enlight"></a>
+                </div>
+
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="~/Home/Index">Ana Sayfa</a></li>
+                        <li><a href="~/Home/Rektor">Rektör</a></li>
+                        <li><a href="~/Home/Duyurular">Duyurular</a></li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li><a href="~/Admin/AdminYonetim">Admin Yönetim Sayfası</a></li>
+                        }
+                        else
+                        {
+                        <li><a href="~/Admin/Index">Admin Olarak Giriş Yap</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="probootstrap-footer probootstrap-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="probootstrap-footer-widget">
+                        <h3>Düzce Tarihçe</h3>
+                        <p>Düzce İlinin de içinde bulunduğu bölge Herodot, Xenophon ve Strabon gibi Antik Çağ yazarlarına göre M.Ö. 1200-700 yılları arasında Trakyalı halkların yurdu olarak bilinmektedir.</p>
+                        <h3>Sosyal Linkler</h3>
+                        <ul class="probootstrap-footer-social">
+                            <li><a href="https://www.instagram.com/duzceuniversite/"><i class="icon-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/DuzceUniversite"><i class="icon-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/duzceuniversite"><i class="icon-twitter"></i></a></li>
+                            <li><a href="http://www.duzce.edu.tr/13518-duyurus-universitemizde-whatsapp-bildirim-hatti-kuruldu"><i class="icon-whatsapp"></i></a></li>
+                            <li><a href="http://www.youtube.com/duzceuniversite"><i class="icon-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-push-1">
+                    <div class="probootstrap-footer-widget">
+                        <h3>Linkler</h3>
+                        <ul>
+                            <li><a href="/Home/Index">Ana Sayfa</a></li>
+                            <li><a href="/Home/Duyurular">Duyurular</a></li>
+                            <li><a href="/Home/Rektor">Rektör</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="probootstrap-footer-widget">
+                        <h3>İletişim Bilgileri</h3>
+                        <ul class="probootstrap-contact-info">
+                            <li><i class="icon-location2"></i> <span>Düzce Üniversitesi Konuralp Yerleşkesi</span></li>
+                            <li><i class="icon-phone"></i><span>TEL : 0850 800 81 81</span></li>
+                            <li><i class="icon-phone2"></i><span>FAKS: 0380 542 11 03</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END row -->
+
+        </div>
+
+        <div class="probootstrap-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 text-left">
+                        <p>© Copyright - Düzce Üniversitesi - @DateTime.Now.Year</p>
+                    </div>
+                    <div class="col-md-4 probootstrap-back-to-top">
+                        <p><a href="#" class="js-backtotop">Üste Dön <i class="icon-arrow-long-up"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/scripts.min.js"></script>
+    <script src="/js/main.min.js"></script>
+    <script src="/js/custom.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
